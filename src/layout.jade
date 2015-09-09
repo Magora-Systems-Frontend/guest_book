@@ -1,0 +1,19 @@
+doctype html
+html(ng-app="myApp")
+    head
+        base(href="/")
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width")
+        include copyright
+
+        link(rel="stylesheet" href="/css/vendor.css?v=#{version}")
+        link(rel="stylesheet" href="/css/application.css?v=#{version}")
+    body
+        div(ui-view="")
+
+    script(type='text/javascript' src="/vendor.js?v=#{version}")
+    script(type='text/javascript' src="/application.js?v=#{version}")
+    script(type='text/javascript' src="/templates.js?v=#{version}")
+
+
+

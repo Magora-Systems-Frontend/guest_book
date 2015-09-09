@@ -1,0 +1,91 @@
+{
+  "public": "./public",
+  "isProduction": false,
+  "stylus": {
+    "src": ["./src/**/*.styl"],
+    "dst": "css/application.css"
+  },
+  "vendorcss": {
+    "src": [
+      "./bower_components/bootstrap/dist/css/bootstrap.min.css",
+      "./bower_components/bootstrap-material-design/dist/css/material.css",
+      "./bower_components/bootstrap-material-design/dist/css/material-fullpalette.css",
+      "./bower_components/bootstrap-material-design/dist/css/ripples.css",
+      "./bower_components/bootstrap-material-design/dist/css/roboto.css"
+    ],
+    "dst": "css/vendor.css"
+  },
+  "vendorjs": {
+    "src": [
+      "./bower_components/angular/angular.min.js",
+      "./bower_components/angular-ui-router/release/angular-ui-router.min.js",
+      "./bower_components/jquery/dist/jquery.min.js",
+      "./bower_components/bootstrap/dist/js/bootstrap.min.js",
+      "./bower_components/bootstrap-material-design/dist/js/ripples.min.js",
+      "./bower_components/bootstrap-material-design/dist/js/material.min.js",
+      "./bower_components/angular-translate/angular-translate.min.js",
+      "./bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js",
+      "./bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
+    ],
+    "dst": "vendor.js"
+  },
+  "javascript": {
+    "src": [
+      "./src/**/*.js",
+      "!/src/init.js"
+    ],
+    "dst": "application.js"
+  },
+  "templates": {
+    "params": {
+      "module": "myApp"
+    },
+    "src": [
+      "./src/**/*.jade",
+      "!src/layout.jade",
+      "!src/copyright.jade"
+    ],
+    "dst": "templates.js"
+  },
+  "layout": {
+    "src": ["./src/layout.jade"],
+    "watch": [
+      "./public/application.css",
+      "./public/application.js",
+      "./public/templates.js"
+    ],
+    "dst": "index.html"
+  },
+  "fonts": {
+    "src": [
+      "./src/fonts/*.*",
+      "./bower_components/bootstrap/fonts/*.*",
+      "./bower_components/bootstrap-material-design/fonts/*.*"
+    ],
+    "dst": "/fonts"
+  },
+  "tr": {
+    "src": [
+      "./src/translates/**/*.json"
+    ],
+    "dst": "/translates"
+  },
+  "build": [
+    "stylus",
+    "javascript",
+    "templates",
+    "layout",
+    "fonts",
+    "vendorjs",
+    "vendorcss",
+    "tr"
+  ],
+  "webServer": {
+    "server": {
+      "livereload": true,
+      "port": 8080,
+      "open": false,
+      "fallback": "index.html"
+    }
+  }
+}
