@@ -1,0 +1,36 @@
+div.col-md-6.jumbotron.send-msg
+    form(ng-submit="submitForm()", data-toggle="validator", role="form").send-msg-form
+        div.input-group
+            input(ng-model="fields.username", type="text", placeholder="Username", minlength="2", maxlength="150", required).form-control
+        div.input-group
+            input(ng-model="fields.email", type="email", placeholder="Email", data-error="Email address is invalid", required).form-control
+        div.input-group
+            textarea(ng-model="fields.message", type="text", placeholder="You message here...", maxlength="256" required).form-control
+        button(type="submit").btn.btn-primary.submit-msg SEND
+
+div.col-md-8.feedback-filter-panel.clearfix
+    div.col-md-6.form-group.search-feedback
+        input(ng-model="query", type="text", placeholder="Search by symbols").form-control#query
+    div.col-md-6.form-group.sort-feedback
+        label(for="orderProp") Sort by
+        select(ng-model="orderProp", data-style="btn-primary").selectpicker#orderProp
+            option(value="message") A-Z
+            option(value="date") Date
+
+div(ng-if="!!storage.length").col-md-12.feedbacks
+    div.feedback-pagination
+        dir-pagination-controls
+    ul(ng-controller="saveEdit")
+        li(id="{{item.id}}", dir-paginate="item in storage | itemsPerPage: 10 | orderBy: orderProp | filter: query track by $index").feedback.edit-disable
+            div.panel.panel-default
+                div.panel-heading.clearfix
+                    h3.panel-title
+                        strong.feedback-username {{item.username}} &nbsp;|&nbsp;
+                        span.feedback-date {{item.date | date:'yyyy-MM-dd hh:mm'}}
+                        button(ng-click="feedbackEdit(item.id)", type="button").btn.btn-info Edit
+                        button(ng-click="feedbackRemove(item.id)", type="button").btn.btn-danger Remove
+                div.panel-body
+                    div(editable-text="item.email", onbeforesave="updateData(item.id, 'email', $data)").feedback-email {{item.email}}
+                    div(editable-text="item.message", onbeforesave="updateData(item.id, 'message', $data)").feedback-message {{item.message}}
+    div.feedback-pagination
+        dir-pagination-controls

@@ -8,10 +8,12 @@
   "vendorcss": {
     "src": [
       "./bower_components/bootstrap/dist/css/bootstrap.min.css",
+      "./bower_components/bootstrap-select/dist/css/bootstrap-select.min.css",
       "./bower_components/bootstrap-material-design/dist/css/material.css",
       "./bower_components/bootstrap-material-design/dist/css/material-fullpalette.css",
       "./bower_components/bootstrap-material-design/dist/css/ripples.css",
-      "./bower_components/bootstrap-material-design/dist/css/roboto.css"
+      "./bower_components/bootstrap-material-design/dist/css/roboto.css",
+      "./bower_components/angular-xeditable/dist/css/xeditable.css"
     ],
     "dst": "css/vendor.css"
   },
@@ -19,8 +21,11 @@
     "src": [
       "./bower_components/angular/angular.min.js",
       "./bower_components/angular-ui-router/release/angular-ui-router.min.js",
+      "./bower_components/angularUtils-pagination/dirPagination.js",
+      "./bower_components/angular-xeditable/dist/js/xeditable.js",
       "./bower_components/jquery/dist/jquery.min.js",
       "./bower_components/bootstrap/dist/js/bootstrap.min.js",
+      "./bower_components/bootstrap-select/dist/js/bootstrap-select.min.js",
       "./bower_components/bootstrap-material-design/dist/js/ripples.min.js",
       "./bower_components/bootstrap-material-design/dist/js/material.min.js",
       "./bower_components/angular-translate/angular-translate.min.js",

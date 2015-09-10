@@ -1,0 +1,62 @@
+@import '../variables.styl'
+
+.send-msg
+  float: none;
+  margin: 25px auto 0;
+  .input-group
+    margin-bottom: 15px;
+    width: 100%;
+    textarea
+      margin-bottom: 6px;
+      min-height: 62px;
+      resize: vertical;
+      &:focus
+        margin-bottom: 0;
+
+.feedback-filter-panel
+  float: none;
+  margin: 45px auto 25px;
+  text-align: center;
+  .sort-feedback
+    label
+      vertical-align: bottom;
+      margin: 0 10px 8px 0;
+  .search-feedback
+    margin-top: 14px
+
+.feedbacks
+  ul
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  .feedback
+    &-username, &-date
+      float: left;
+      margin-top: 18px;
+    &-pagination
+      margin: 25px 0 15px;
+      text-align: center;
+    .panel-heading
+      button
+        float: right;
+        margin-left: 10px;
+    .panel-body
+      > div
+        margin-bottom: 10px;
+        padding-bottom: 9px;
+      .editable-text
+        position: relative;
+        bottom: 3px;
+        margin-bottom: 10px;
+        padding-bottom: 4px;
+    .btn-info
+      opacity: .5;
+    &.edit-disable
+      .btn-info
+        opacity: 1;
+      .panel-body
+        pointer-events: none;
+        > div
+          border-bottom: 1px solid #d2d2d2;
+          &:last-child
+            border-bottom: 1px solid transparent;
